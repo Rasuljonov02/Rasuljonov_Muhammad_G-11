@@ -77,7 +77,7 @@ btn2.addEventListener("click", (e) => {
 	ii++;
 
 	// let a = `<p class="task" draggable="true">IP#${ii}</di>`;
-	zz.className = "task task is-dragging";
+	zz.className = "task is-dragging";
 	zz.draggable = "true";
 	zz.innerText = `Id# ${ii}`;
 	inprogress.appendChild(zz);
@@ -92,7 +92,7 @@ btn3.addEventListener("click", (e) => {
 
 	iii++;
 	// let a = `<p class="task" draggable="true">Done#${iii}</di>`;
-	zzz.className = "task task is-dragging";
+	zzz.className = "task is-dragging";
 	zzz.draggable = "true";
 	zzz.innerText = `Done# ${iii}`;
 	done.appendChild(zzz);
