@@ -57,32 +57,45 @@ let i = 4;
 
 btn1.addEventListener("click", (e) => {
 	e.preventDefault();
-
+	const z = document.createElement("p");
 	i++;
-	let a = `<p class="task" draggable="true">Todo# ${i}</di>`;
+	z.className = "task is-dragging";
+	z.draggable = "true";
+	z.innerText = `Todo# ${i}`;
+	todoo.appendChild(z);
+	// let a = `<p class="task" draggable="true">Todo# ${i}</di>`;
 
-	console.log(a);
-	todoo.appendChild(a);
+	console.log(z);
+	// todoo.appendChild(a);
 });
 let ii = 4;
 
 btn2.addEventListener("click", (e) => {
 	e.preventDefault();
+	const zz = document.createElement("p");
 
 	ii++;
-	let a = `<p class="task" draggable="true">IP#${ii}</di>`;
 
-	console.log(a);
-	todoo.appendChild(a);
+	// let a = `<p class="task" draggable="true">IP#${ii}</di>`;
+	zz.className = "task task is-dragging";
+	zz.draggable = "true";
+	zz.innerText = `Id# ${ii}`;
+	inprogress.appendChild(zz);
+	console.log(zz);
+	// todoo.appendChild(a);
 });
 let iii = 4;
 
 btn3.addEventListener("click", (e) => {
 	e.preventDefault();
+	const zzz = document.createElement("p");
 
 	iii++;
-	let a = `<p class="task" draggable="true">Done#${iii}</di>`;
-
-	console.log(a);
-	todoo.appendChild(a);
+	// let a = `<p class="task" draggable="true">Done#${iii}</di>`;
+	zzz.className = "task task is-dragging";
+	zzz.draggable = "true";
+	zzz.innerText = `Done# ${iii}`;
+	done.appendChild(zzz);
+	console.log(zzz);
+	// todoo.appendChild(a);
 });
