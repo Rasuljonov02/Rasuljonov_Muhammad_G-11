@@ -58,9 +58,9 @@ const insertAboveTask = (zone, mouseY) => {
 	return closestTask;
 };
 
-let i = 0;
-let ii = 0;
-let iii = 0;
+let i = 4;
+let ii = 4;
+let iii = 4;
 
 // Event listener for the first button (btn1)
 btn1.addEventListener("click", (e) => {
