@@ -53,14 +53,36 @@ const insertAboveTask = (zone, mouseY) => {
 	return closestTask;
 };
 
-// let i = 4;
+let i = 4;
 
-// btn1.addEventListener("click", (e) => {
-// 	e.preventDefault();
+btn1.addEventListener("click", (e) => {
+	e.preventDefault();
 
-// 	i++;
-// 	let a = `<p class="task" draggable="true">Todo# ${i}</di>`;
+	i++;
+	let a = `<p class="task" draggable="true">Todo# ${i}</di>`;
 
-// 	console.log(a);
-// 	todoo.appendChild(a);
-// });
+	console.log(a);
+	todoo.appendChild(a);
+});
+let ii = 4;
+
+btn2.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	ii++;
+	let a = `<p class="task" draggable="true">IP#${ii}</di>`;
+
+	console.log(a);
+	todoo.appendChild(a);
+});
+let iii = 4;
+
+btn3.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	iii++;
+	let a = `<p class="task" draggable="true">Done#${iii}</di>`;
+
+	console.log(a);
+	todoo.appendChild(a);
+});
