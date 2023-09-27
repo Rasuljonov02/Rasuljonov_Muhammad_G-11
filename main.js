@@ -1,12 +1,14 @@
+// Selecting various HTML elements using their classes
 const btn1 = document.querySelector(".btn1");
 const btn2 = document.querySelector(".btn2");
 const btn3 = document.querySelector(".btn3");
 const todoo = document.querySelector(".todoo");
 const inprogress = document.querySelector(".inprogres");
 const done = document.querySelector(".done");
-const droppables = document.querySelectorAll(".todo"); // katta divlar
-const draggables = document.querySelectorAll(".task"); // kichik divlar
+const droppables = document.querySelectorAll(".todo"); // Drop zones
+const draggables = document.querySelectorAll(".task"); // Draggable tasks
 
+// Adding drag and drop event listeners to draggable tasks
 draggables.forEach((task) => {
 	task.addEventListener("dragstart", () => {
 		task.classList.add("is-dragging");
@@ -18,13 +20,16 @@ draggables.forEach((task) => {
 	});
 });
 
+// Adding dragover event listeners to drop zones
 droppables.forEach((zone) => {
 	zone.addEventListener("dragover", (e) => {
 		e.preventDefault();
 
+		// Determine the task above which the dragged task will be inserted
 		const bottomTask = insertAboveTask(zone, e.clientY);
 		const curTask = document.querySelector(".is-dragging");
 
+		// Insert the dragged task either below or above another task
 		if (!bottomTask) {
 			zone.appendChild(curTask);
 		} else {
@@ -33,6 +38,7 @@ droppables.forEach((zone) => {
 	});
 });
 
+// Function to find the closest task above the mouse pointer's position
 const insertAboveTask = (zone, mouseY) => {
 	const els = zone.querySelectorAll(".task:not(.is-dragging)");
 
@@ -41,7 +47,6 @@ const insertAboveTask = (zone, mouseY) => {
 
 	els.forEach((task) => {
 		const { top } = task.getBoundingClientRect();
-
 		const offset = mouseY - top;
 
 		if (offset < 0 && offset > closestOffset) {
@@ -53,45 +58,57 @@ const insertAboveTask = (zone, mouseY) => {
 	return closestTask;
 };
 
-let i = 4;
+let i = 0;
+let ii = 0;
+let iii = 0;
 
+// Event listener for the first button (btn1)
 btn1.addEventListener("click", (e) => {
-	e.preventDefault();
-	const z = document.createElement("p");
 	i++;
-	z.className = "task is-dragging";
-	z.draggable = "true";
-	z.innerText = `Todo# ${i}`;
-	todoo.appendChild(z);
-
-	console.log(z);
+	let create = document.createElement("p");
+	create.className = "task"; // Changed the class name to "task"
+	create.draggable = true;
+	create.innerText = `todo #${i}`;
+	todoo.appendChild(create);
+	console.log(create);
+	create.addEventListener("dragstart", () => {
+		create.classList.add("is-dragging");
+	});
+	create.addEventListener("dragend", () => {
+		create.classList.remove("is-dragging");
+	});
 });
-let ii = 4;
 
+// Event listener for the second button (btn2)
 btn2.addEventListener("click", (e) => {
-	e.preventDefault();
-	const zz = document.createElement("p");
-
 	ii++;
-
-	zz.className = "task is-dragging";
-	zz.draggable = "true";
-	zz.innerText = `Id# ${ii}`;
-	inprogress.appendChild(zz);
-	console.log(zz);
+	let create = document.createElement("p");
+	create.className = "task"; // Changed the class name to "task"
+	create.draggable = true;
+	create.innerText = `IP #${ii}`;
+	inprogress.appendChild(create);
+	console.log(create);
+	create.addEventListener("dragstart", () => {
+		create.classList.add("is-dragging");
+	});
+	create.addEventListener("dragend", () => {
+		create.classList.remove("is-dragging");
+	});
 });
-let iii = 4;
 
+// Event listener for the third button (btn3)
 btn3.addEventListener("click", (e) => {
-	e.preventDefault();
-	const zzz = document.createElement("p");
-
 	iii++;
-
-	zzz.className = "task is-dragging";
-	zzz.draggable = "true";
-	zzz.innerText = `Done# ${iii}`;
-	done.appendChild(zzz);
-	console.log(zzz);
+	let create = document.createElement("p");
+	create.className = "task"; // Changed the class name to "task"
+	create.draggable = true;
+	create.innerText = `Done #${iii}`;
+	done.appendChild(create);
+	console.log(create);
+	create.addEventListener("dragstart", () => {
+		create.classList.add("is-dragging");
+	});
+	create.addEventListener("dragend", () => {
+		create.classList.remove("is-dragging");
+	});
 });
-
