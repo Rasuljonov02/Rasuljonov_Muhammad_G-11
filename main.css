@@ -14,6 +14,7 @@ body {
 .contener {
 	width: 100%;
 	display: flex;
+	height: auto;
 	justify-content: space-around;
 	gap: 20px;
 }
@@ -53,4 +54,22 @@ h1 {
 .c {
 	background-color: yellowgreen;
 	padding: 10px 15px;
+}
+.btn {
+	width: 150px;
+	height: 60px;
+	font-size: 25px;
+	display: grid;
+	/* padding: 20px; */
+	place-items: center;
+	background-color: rgb(78, 75, 69);
+	color: white;
+}
+.la {
+	width: auto;
+	height: auto;
+	display: grid;
+	place-items: center;
+	gap: 20px;
+	/* background-color: rgb(65, 36, 36); */
 }
