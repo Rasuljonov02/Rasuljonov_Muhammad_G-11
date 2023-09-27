@@ -63,10 +63,8 @@ btn1.addEventListener("click", (e) => {
 	z.draggable = "true";
 	z.innerText = `Todo# ${i}`;
 	todoo.appendChild(z);
-	// let a = `<p class="task" draggable="true">Todo# ${i}</di>`;
 
 	console.log(z);
-	// todoo.appendChild(a);
 });
 let ii = 4;
 
@@ -76,13 +74,11 @@ btn2.addEventListener("click", (e) => {
 
 	ii++;
 
-	// let a = `<p class="task" draggable="true">IP#${ii}</di>`;
 	zz.className = "task is-dragging";
 	zz.draggable = "true";
 	zz.innerText = `Id# ${ii}`;
 	inprogress.appendChild(zz);
 	console.log(zz);
-	// todoo.appendChild(a);
 });
 let iii = 4;
 
@@ -91,11 +87,11 @@ btn3.addEventListener("click", (e) => {
 	const zzz = document.createElement("p");
 
 	iii++;
-	// let a = `<p class="task" draggable="true">Done#${iii}</di>`;
+
 	zzz.className = "task is-dragging";
 	zzz.draggable = "true";
 	zzz.innerText = `Done# ${iii}`;
 	done.appendChild(zzz);
 	console.log(zzz);
-	// todoo.appendChild(a);
 });
+
