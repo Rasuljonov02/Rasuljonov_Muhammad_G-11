@@ -1,4 +1,3 @@
-
 const btn1 = document.querySelector(".btn1");
 const btn2 = document.querySelector(".btn2");
 const btn3 = document.querySelector(".btn3");
@@ -7,7 +6,6 @@ const inprogress = document.querySelector(".inprogres");
 const done = document.querySelector(".done");
 const droppables = document.querySelectorAll(".todo");
 const draggables = document.querySelectorAll(".task");
-
 
 draggables.forEach((task) => {
 	task.addEventListener("dragstart", () => {
@@ -20,14 +18,12 @@ draggables.forEach((task) => {
 	});
 });
 
-
 droppables.forEach((zone) => {
 	zone.addEventListener("dragover", (e) => {
 		e.preventDefault();
 
 		const bottomTask = insertAboveTask(zone, e.clientY);
 		const curTask = document.querySelector(".is-dragging");
-
 
 		if (!bottomTask) {
 			zone.appendChild(curTask);
@@ -70,9 +66,11 @@ btn1.addEventListener("click", (e) => {
 	console.log(create);
 	create.addEventListener("dragstart", () => {
 		create.classList.add("is-dragging");
+		console.log(start);
 	});
 	create.addEventListener("dragend", () => {
 		create.classList.remove("is-dragging");
+		console.log(finisg);
 	});
 });
 
@@ -86,9 +84,11 @@ btn2.addEventListener("click", (e) => {
 	console.log(create);
 	create.addEventListener("dragstart", () => {
 		create.classList.add("is-dragging");
+		console.log(start);
 	});
 	create.addEventListener("dragend", () => {
 		create.classList.remove("is-dragging");
+		console.log(finisg);
 	});
 });
 
@@ -102,8 +102,10 @@ btn3.addEventListener("click", (e) => {
 	console.log(create);
 	create.addEventListener("dragstart", () => {
 		create.classList.add("is-dragging");
+		console.log(start);
 	});
 	create.addEventListener("dragend", () => {
 		create.classList.remove("is-dragging");
+		console.log(finisg);
 	});
 });
